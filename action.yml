@@ -1,0 +1,29 @@
+name: "Update Cloudflare Dnslink to Website's IPFS CID"
+description: "Create or update Cloudflare domain's TXT record dnslink value to IPFS hosted website's CID"
+author: "Decoo Technologies"
+
+inputs:
+  name:
+    description: 'Domain to update, e.g. "ipfs.example.com"'
+    required: true
+  cid:
+    description: 'Website's IPFS V0 CID'
+    required: true
+  token:
+    description: "Cloudflare API token"
+    required: true
+  zone:
+    default: "Cloudflare zone"
+    required: true
+outputs:
+  record_id:
+    description: "Record ID"
+  name:
+    description: 'Updated domain name'
+runs:
+  using: "node12"
+  main: "main.js"
+
+branding:
+  icon: "cloud"
+  color: "orange"
